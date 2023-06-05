@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 리스트 페이지</title>
+    <link th:href="@{/css/main2.css}" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <table>
+        <thead>
+            <tr>
+                <th>글 번호</th>
+                <th>제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="post : ${list}">
+                <td th:text="${post.id}"></td>
+                <td>
+                    <a th:text="${post.title}" th:href="@{/board/view/{id}(id=${post.id})}"></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</body>
+</html>
