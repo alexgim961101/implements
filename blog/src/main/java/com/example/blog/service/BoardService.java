@@ -29,7 +29,7 @@ public class BoardService {
     @Transactional
     public Board boardView(Long id) {
 
-        Board boardEntity = boardRepository.findByIdForUpdate(id).get();
+        Board boardEntity = boardRepository.findById(id).get();
         boardEntity.upCnt();
 
         return boardEntity;
